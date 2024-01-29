@@ -30,11 +30,6 @@ public class NlcsApplication implements ApplicationRunner {
         scheduleInitTask(); // Lập lịch cho việc thực hiện init() mỗi giây
     	
     }
-    
-    @Scheduled(fixedRate = 5000)
-    public void scheduledKeepAlive() {
-        
-    }
 
     public void init() {
 //        RoleEntity role = roleRepo.findById(1L).orElse(null);
@@ -60,6 +55,18 @@ public class NlcsApplication implements ApplicationRunner {
 	    System.out.println("Self-call response: " + response);
 	
 	    // Perform any additional tasks here if needed
+	    
+	    try {
+            // Clear console using ANSI escape codes (may not work in all environments)
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+        } catch (Exception e) {
+            // Handle exception if ANSI escape codes are not supported
+            e.printStackTrace();
+        }
+
+        // Log the cleanup activity if needed
+        System.out.println("Console cleanup task executed.");
     }
 
     private void scheduleInitTask() {
@@ -68,4 +75,5 @@ public class NlcsApplication implements ApplicationRunner {
         // Lập lịch thực hiện init() mỗi giây
         scheduler.scheduleAtFixedRate(this::init, 0, 5, TimeUnit.SECONDS);
     }
+
 }
