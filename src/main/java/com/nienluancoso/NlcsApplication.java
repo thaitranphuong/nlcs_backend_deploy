@@ -73,7 +73,7 @@ public class NlcsApplication implements ApplicationRunner {
         ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 
         // Lập lịch thực hiện init() mỗi giây
-        scheduler.scheduleAtFixedRate(this::init, 0, 5, TimeUnit.SECONDS);
+        scheduler.scheduleAtFixedRate(this::init, 0, 600, TimeUnit.SECONDS);
     }
 
 }
