@@ -1,15 +1,3 @@
-# FROM ubuntu:latest AS build
-
-# RUN apt-get update
-# RUN apt-get install openjdk-17-jdk -y
-# COPY . .
-# RUN ./gradlew bootjar --no-daemon
-
-# FROM openjdk:17-jdk-slim 
-# EXPOSE 8080
-# COPY --from=build /build/libs/demo-1.jar app.jar
-# ENTRYPOINT ["java", "-jar", "/app.jar"]
-
 # Sử dụng Ubuntu với tên gọi build
 FROM ubuntu:latest AS build
 
@@ -34,6 +22,7 @@ WORKDIR /app
 
 # Sao chép file WAR từ lớp build sang thư mục /app
 COPY --from=build /app/target/*.war app.war
+COPY uploads/ /app/uploads/
 
 # Mở cổng 8080
 EXPOSE 8080
