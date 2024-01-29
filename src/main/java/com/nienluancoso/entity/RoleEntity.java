@@ -36,6 +36,12 @@ public class RoleEntity {
 		this.user = user;
 	}
 
+	public RoleEntity(long id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+
 	public long getId() {
 		return id;
 	}
