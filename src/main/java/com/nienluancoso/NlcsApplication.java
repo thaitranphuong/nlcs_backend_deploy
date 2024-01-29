@@ -42,7 +42,7 @@ public class NlcsApplication implements ApplicationRunner {
 //            roleRepo.save(new RoleEntity(2L, "student"));
 //        }
     	
-	    System.out.println("Scheduled keep-alive call.");
+	    //System.out.println("Scheduled keep-alive call.");
 	
 	    // Prepare URL for the self-call
 	    String selfCallUrl = "https://exam-vavn.onrender.com/keep-alive";
@@ -56,17 +56,6 @@ public class NlcsApplication implements ApplicationRunner {
 	
 	    // Perform any additional tasks here if needed
 	    
-	    try {
-            // Clear console using ANSI escape codes (may not work in all environments)
-            System.out.print("\033[H\033[2J");
-            System.out.flush();
-        } catch (Exception e) {
-            // Handle exception if ANSI escape codes are not supported
-            e.printStackTrace();
-        }
-
-        // Log the cleanup activity if needed
-        System.out.println("Console cleanup task executed.");
     }
 
     private void scheduleInitTask() {
