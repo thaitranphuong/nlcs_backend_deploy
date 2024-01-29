@@ -14,7 +14,7 @@ public class KeepAliveScheduler {
     // Endpoint keep-alive
     @GetMapping("/keep-alive")
     public String keepAlive() {
-        System.out.println("Keep-alive endpoint called.");
+       // System.out.println("Keep-alive endpoint called.");
         return "Server is alive!";
     }
 

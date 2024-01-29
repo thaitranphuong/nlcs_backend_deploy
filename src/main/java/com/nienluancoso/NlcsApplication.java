@@ -52,7 +52,7 @@ public class NlcsApplication implements ApplicationRunner {
 	    String response = restTemplate.getForObject(selfCallUrl, String.class);
 	
 	    // Log the response if needed
-	    System.out.println("Self-call response: " + response);
+	  //  System.out.println("Self-call response: " + response);
 	
 	    // Perform any additional tasks here if needed
 	    
