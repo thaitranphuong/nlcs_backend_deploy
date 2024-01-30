@@ -41,8 +41,6 @@ public class NlcsApplication implements ApplicationRunner {
 //        if (role == null) {
 //            roleRepo.save(new RoleEntity(2L, "student"));
 //        }
-    	
-	    //System.out.println("Scheduled keep-alive call.");
 	
 	    // Prepare URL for the self-call
 	    String selfCallUrl = "https://exam-vavn.onrender.com/keep-alive";
@@ -50,11 +48,6 @@ public class NlcsApplication implements ApplicationRunner {
 	    // Send HTTP GET request to itself
 	    RestTemplate restTemplate = new RestTemplate();
 	    String response = restTemplate.getForObject(selfCallUrl, String.class);
-	
-	    // Log the response if needed
-	  //  System.out.println("Self-call response: " + response);
-	
-	    // Perform any additional tasks here if needed
 	    
     }
 

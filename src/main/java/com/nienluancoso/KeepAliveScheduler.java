@@ -14,10 +14,6 @@ public class KeepAliveScheduler {
     // Endpoint keep-alive
     @GetMapping("/keep-alive")
     public String keepAlive() {
-       // System.out.println("Keep-alive endpoint called.");
         return "Server is alive!";
     }
-
-    // Scheduled task to call the keep-alive endpoint every 5 seconds
-    
 }
