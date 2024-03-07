@@ -23,6 +23,11 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;
+
+	@GetMapping("/test")
+	public String register(@RequestBody UserDTO userDTO) {
+		return "OK";
+	}
 	
 	@PostMapping("/user/get-user")
 	public UserDTO getUser(@RequestBody Long id) {
