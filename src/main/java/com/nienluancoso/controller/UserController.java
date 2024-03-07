@@ -25,7 +25,7 @@ public class UserController {
 	private UserService userService;
 
 	@GetMapping("/test")
-	public String test(@RequestBody UserDTO userDTO) {
+	public String test() {
 		return "OK";
 	}
 	
