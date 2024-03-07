@@ -58,4 +58,15 @@ public class NlcsApplication implements ApplicationRunner {
         scheduler.scheduleAtFixedRate(this::init, 0, 600, TimeUnit.SECONDS);
     }
 
+    public void createRole() {
+		RoleEntity teacherRole = new RoleEntity();
+		RoleEntity studentRole = new RoleEntity();
+		teacherRole.setId(1L);
+		teacherRole.setName("teacher");
+		studentRole.setId(2L);
+		studentRole.setName("student");
+		roleRepo.save(teacherRole);
+		roleRepo.save(studentRole);
+	}
+
 }
