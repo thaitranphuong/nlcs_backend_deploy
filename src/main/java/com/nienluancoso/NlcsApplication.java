@@ -28,7 +28,7 @@ public class NlcsApplication implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         init(); // Gọi init() ở đây để chạy một lần khi ứng dụng bắt đầu
         scheduleInitTask(); // Lập lịch cho việc thực hiện init() mỗi giây
-    	
+    	createRole();
     }
 
     public void init() {
