@@ -28,7 +28,7 @@ public class NlcsApplication implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         init(); // Gọi init() ở đây để chạy một lần khi ứng dụng bắt đầu
         scheduleInitTask(); // Lập lịch cho việc thực hiện init() mỗi giây
-    	//createRole();
+    	createRole();
     }
 
     public void init() {
@@ -55,7 +55,7 @@ public class NlcsApplication implements ApplicationRunner {
         ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 
         // Lập lịch thực hiện init() mỗi giây
-        scheduler.scheduleAtFixedRate(this::init, 0, 300, TimeUnit.SECONDS);
+        scheduler.scheduleAtFixedRate(this::init, 0, 600, TimeUnit.SECONDS);
     }
 
     public void createRole() {
